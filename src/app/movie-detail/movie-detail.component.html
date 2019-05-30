@@ -1,0 +1,22 @@
+<ng-container *ngIf="!isLoadingMovie">
+  <div class="poster">
+    <img class="img-responsive" src="http://image.tmdb.org/t/p/w300/{{movieDetail?.poster_path}}" alt="">
+    <h1 class="title">{{movieDetail?.title}}
+      <span>{{movieDetail?.release_date}}</span>
+    </h1>
+    <div class="youtube-frame">
+      <iframe width="560" height="380" [src]="videoUrl" frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="genres">
+    <ng-container *ngFor="let genre of movieDetail?.genres">
+      <span>{{genre?.name}}</span>
+    </ng-container>
+  </div>
+  <div class="overview">
+    <p>
+      {{movieDetail?.overview}}
+    </p>
+  </div>
+</ng-container>

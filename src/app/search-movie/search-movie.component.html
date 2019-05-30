@@ -1,0 +1,30 @@
+<div class="pagging-btn" *ngIf="!hideNextPrev">
+    <button class="btn btn-primary" [disabled]="isPreviousDisabled" (click)="onPrevPageClick()">Prev</button>
+    <button class="btn btn-primary" [disabled]="isNextDisabled" (click)="onNextPageClick()">Next</button>
+  </div>
+  <div class="container">
+    <!-- Projects Row -->
+    <div class="row" *ngIf="!isLoadingMovies">
+      <div class="col-md-3 portfolio-item" *ngFor="let movie of discoverMovies?.results">
+        <a [routerLink]="['/home/movies/',movie.id]">
+          <img class="img-responsive" src="http://image.tmdb.org/t/p/w300/{{movie?.poster_path}}" alt="">
+          <div class="title">
+            {{movie?.title}}
+          </div>
+          <div class="overview">{{movie?.overview}}</div>
+          <div class="genres">
+            <ng-container *ngFor="let genreId of movie?.genre_ids">
+              <ng-container *ngFor="let genre of movieGenres">
+                <span *ngIf="genreId == genre.id">
+                  {{genre.name}}
+                </span>
+              </ng-container>
+            </ng-container>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-12 text-center" *ngIf="isLoadingMovies"><i class="fa fa-spinner fa-spin fa-5x"></i></div>
+    </div>
+  </div>
