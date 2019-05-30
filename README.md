@@ -1,5 +1,10 @@
 # PrimalMovies
 
+Angular Application for watching latest movies trailer.
+
+API used for getting all movies: [TheMovieDB](https://www.themoviedb.org/).
+Youtube API is used for getting youtube videos.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
 ## Development server
