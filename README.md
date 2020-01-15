@@ -7,7 +7,7 @@ Youtube API is used for getting youtube videos.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
-## Demo url
+## Demo
 
 [Primal Movies Demo](https://master.d1mm04kz53ce7o.amplifyapp.com)
 
